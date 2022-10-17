@@ -1,0 +1,7 @@
+<class_libraries>
+  <library path="plansys2_cff_plan_solver">
+    <class name="plansys2/CFFPlanSolver" type="plansys2::CFFPlanSolver" base_class_type="plansys2::PlanSolverBase">
+      <description></description>
+    </class>
+  </library>
+</class_libraries>
