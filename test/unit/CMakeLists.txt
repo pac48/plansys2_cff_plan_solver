@@ -1,2 +1,2 @@
-ament_add_gtest(tfd_test tfd_test.cpp)
-target_link_libraries(tfd_test ${PROJECT_NAME} dl)
+ament_add_gtest(cff_test cff_test.cpp)
+target_link_libraries(cff_test ${PROJECT_NAME} dl)
