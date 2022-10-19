@@ -205,17 +205,16 @@ namespace plansys2 {
             plan_file.close();
         }
 
-        auto root_node = tree_map["0||0"];
 
-        std::vector<plansys2_msgs::msg::PlanItem> data;
-        std::vector<int> struc;
-        encode_plan(root_node, ret.structure, ret.items);
-
-//        auto root_node_decode = decode_plan(ret.structure, ret.items);
 
         if (!solution) {
             return {};
         } else {
+            auto root_node = tree_map["0||0"];
+            std::vector<plansys2_msgs::msg::PlanItem> data;
+            std::vector<int> struc;
+            encode_plan(root_node, ret.structure, ret.items);
+            // auto root_node_decode = decode_plan(ret.structure, ret.items);
             return ret;
         }
     }
