@@ -27,8 +27,6 @@
 #include "plansys2_cff_plan_solver/cff_plan_solver.hpp"
 #include "pluginlib/class_list_macros.hpp"
 
-PLUGINLIB_EXPORT_CLASS(plansys2::TFDPlanSolver, plansys2::PlanSolverBase);
-
 namespace plansys2 {
 
     unsigned int split_string(const std::string &text, std::vector<std::string> &tokens, char separator) {
@@ -100,16 +98,16 @@ namespace plansys2 {
     }
 
 
-    TFDPlanSolver::TFDPlanSolver() {
+    CFFPlanSolver::CFFPlanSolver() {
     }
 
     void
-    TFDPlanSolver::configure(rclcpp_lifecycle::LifecycleNode::SharedPtr &node, const std::string &id) {
+    CFFPlanSolver::configure(rclcpp_lifecycle::LifecycleNode::SharedPtr &node, const std::string &id) {
 
     }
 
     std::optional<plansys2_msgs::msg::Plan>
-    TFDPlanSolver::getPlan(
+    CFFPlanSolver::getPlan(
             const std::string &domain, const std::string &problem,
             const std::string &node_namespace) {
         if (node_namespace != "") {
@@ -211,12 +209,10 @@ namespace plansys2 {
             return {};
         } else {
             auto root_node = tree_map["0||0"];
-            std::vector<plansys2_msgs::msg::PlanItem> data;
-            std::vector<int> struc;
-            encode_plan(root_node, ret.structure, ret.items);
-            // auto root_node_decode = decode_plan(ret.structure, ret.items);
-            return ret;
+            return encode_plan(root_node);
         }
     }
 
 }  // namespace plansys2
+
+PLUGINLIB_EXPORT_CLASS(plansys2::CFFPlanSolver, plansys2::PlanSolverBase);

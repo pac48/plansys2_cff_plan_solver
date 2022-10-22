@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef PLANSYS2_TFD_PLAN_SOLVER__TFD_PLAN_SOLVER_HPP_
-#define PLANSYS2_TFD_PLAN_SOLVER__TFD_PLAN_SOLVER_HPP_
+#ifndef PLANSYS2_CFF_PLAN_SOLVER__TFD_PLAN_SOLVER_HPP_
+#define PLANSYS2_CFF_PLAN_SOLVER__TFD_PLAN_SOLVER_HPP_
 
 #include <optional>
 #include <memory>
@@ -24,10 +24,10 @@
 namespace plansys2
 {
 
-class TFDPlanSolver : public PlanSolverBase
+class CFFPlanSolver : public PlanSolverBase
 {
 public:
-  TFDPlanSolver();
+  CFFPlanSolver();
 
   void configure(rclcpp_lifecycle::LifecycleNode::SharedPtr & node, const std::string & id);
 
@@ -41,4 +41,4 @@ private:
 
 }  // namespace plansys2
 
-#endif  // PLANSYS2_TFD_PLAN_SOLVER__TFD_PLAN_SOLVER_HPP_
+#endif  // PLANSYS2_CFF_PLAN_SOLVER__TFD_PLAN_SOLVER_HPP_

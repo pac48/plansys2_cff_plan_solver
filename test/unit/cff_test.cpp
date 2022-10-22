@@ -37,7 +37,7 @@ TEST(tfd_plan_solver, generate_plan_good)
     std::istreambuf_iterator<char>());
 
   auto node = rclcpp_lifecycle::LifecycleNode::make_shared("test_node");
-  auto planner = std::make_shared<plansys2::TFDPlanSolver>();
+  auto planner = std::make_shared<plansys2::CFFPlanSolver>();
   planner->configure(node, "TFD");
   auto plan = planner->getPlan(domain_str, problem_str);
 
@@ -61,7 +61,7 @@ TEST(tfd_plan_solver, generate_plan_unsolvable)
     std::istreambuf_iterator<char>());
 
   auto node = rclcpp_lifecycle::LifecycleNode::make_shared("test_node");
-  auto planner = std::make_shared<plansys2::TFDPlanSolver>();
+  auto planner = std::make_shared<plansys2::CFFPlanSolver>();
   planner->configure(node, "TFD");
 
   auto plan = planner->getPlan(domain_str, problem_str);

@@ -3,10 +3,10 @@
 (:objects b1 b2 b3 )
 (:init
 
-(unknown (on-table b3))
+(unknown (ontable b3))
 (unknown (clear b3))
 (unknown (on b3 b2))
-(unknown (on-table b2))
+(unknown (ontable b2))
 (unknown (clear b2))
 (unknown (on b2 b3))
 (or
@@ -22,15 +22,15 @@
 (clear b2)
 )
 (oneof
-(on-table b3)
-(on-table b2)
+(ontable b3)
+(ontable b2)
 )
 (oneof
-(on-table b3)
+(ontable b3)
 (on b3 b2)
 )
 (oneof
-(on-table b2)
+(ontable b2)
 (on b2 b3)
 )
 (oneof

@@ -1,6 +1,7 @@
 (define (domain blocksworld)
+(:requirements :strips :typing :disjunctive-preconditions)
 (:predicates (clear ?x)
-             (on-table ?x)
+             (ontable ?x)
              (on ?x ?y))
 
 
@@ -15,7 +16,7 @@
 
   (:action senseONTABLE	
    :parameters (?b1)
-   :observe (on-table ?b1))
+   :observe (ontable ?b1))
 
 (:action move-b-to-b
   :parameters (?bm ?bf ?bt)
@@ -26,11 +27,11 @@
 (:action move-to-t
   :parameters (?b ?bf)
   :precondition (and (clear ?b) (on ?b ?bf))
-  :effect (and (on-table ?b) (not (on ?b ?bf)) (clear ?bf)))
+  :effect (and (ontable ?b) (not (on ?b ?bf)) (clear ?bf)))
 
 (:action move-t-to-b
   :parameters (?bm ?bt)
-  :precondition (and (clear ?bm) (clear ?bt) (on-table ?bm))
-  :effect (and (not (clear ?bt)) (not (on-table ?bm))
+  :precondition (and (clear ?bm) (clear ?bt) (ontable ?bm))
+  :effect (and (not (clear ?bt)) (not (ontable ?bm))
                (on ?bm ?bt))))
 
