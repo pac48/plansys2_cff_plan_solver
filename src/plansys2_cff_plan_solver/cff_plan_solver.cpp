@@ -127,7 +127,7 @@ namespace plansys2 {
         problem_out.close();
 
         system(
-                ("ros2 run plansys2_cff_plan_solver FF -o /tmp/" + node_namespace + "/domain.pddl -f /tmp/" +
+                ("ros2 run plansys2_cff_plan_solver FF -a 0 -o /tmp/" + node_namespace + "/domain.pddl -f /tmp/" +
                  node_namespace + "/problem.pddl > " + "/tmp/" + node_namespace + "/pddlplan.1").c_str()
         );
 
