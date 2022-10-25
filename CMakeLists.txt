@@ -61,6 +61,6 @@ ament_export_include_directories(include)
 ament_export_libraries(${PROJECT_NAME})
 ament_export_dependencies(${dependencies})
 
-pluginlib_export_plugin_description_file(plansys2 plansys2_cff_plan_solver_plugin.xml)
+pluginlib_export_plugin_description_file(plansys2_core plansys2_cff_plan_solver_plugin.xml)
 
 ament_package()
